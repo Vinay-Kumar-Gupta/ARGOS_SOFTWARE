@@ -1,0 +1,109 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Trigger</title>
+    <style>
+        .large-button {
+            font-size: 20px;
+            padding: 10px 20px;
+            display: block;
+            margin-bottom: 10px; /* Space between buttons */
+            color: white; /* Text color */
+            background-color: blue; /* Button background color */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Pointer cursor on hover */
+        }
+        .large-button:hover {
+            background-color: darkblue; /* Darker background on hover */
+        }
+    </style>
+    <script>
+        function button1() {
+            fetch('/button1', {
+                method: 'POST'
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                alert(data.message);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+        function button2() {
+            fetch('/button2', {
+                method: 'POST'
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                alert(data.message);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+        // function button3() {
+        //     fetch('/trigger', {
+        //         method: 'POST'
+        //     })
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         console.log(data);
+        //         alert(data.message);
+        //     })
+        //     .catch(error => {
+        //         console.error('Error:', error);
+        //     });
+        // }
+        // function button4() {
+        //     fetch('/trigger', {
+        //         method: 'POST'
+        //     })
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         console.log(data);
+        //         alert(data.message);
+        //     })
+        //     .catch(error => {
+        //         console.error('Error:', error);
+        //     });
+        // }
+    </script>
+</head>
+<body>
+    <button class="large-button" onclick="button1()">R - 305</button>
+    <button class="large-button" onclick="button2()">R - 306</button>
+    <button class="large-button" onclick="button3()">R - 307</button>
+    <button class="large-button" onclick="button4()">R - 311</button>
+    
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Reader</title>
+    <script>
+        function getCount() {
+            fetch('/get_count')
+            .then(response => response.json())
+            .then(data => {
+                console.log(data);
+                alert('Current count: ' + data.count);
+            });
+        }
+    </script>
+</head>
+<body>
+    <button onclick="getCount()">Get Current Count</button>
+</body>
+</html>
